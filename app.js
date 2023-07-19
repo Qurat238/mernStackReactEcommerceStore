@@ -10,7 +10,9 @@ import { dirname, join, resolve } from 'path';
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended:true}));
+//Middleware
+app.use(bodyParser.json({limit: "30mb", extended: true}))
+app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(fileUpload());
 
 

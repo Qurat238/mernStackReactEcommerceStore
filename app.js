@@ -6,8 +6,10 @@ import fileUpload from "express-fileupload";
 import dotenv from "dotenv";
 import { fileURLToPath } from 'url';
 import { dirname, join, resolve } from 'path';
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 //Middleware

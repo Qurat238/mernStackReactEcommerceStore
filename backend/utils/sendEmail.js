@@ -18,16 +18,14 @@ const sendEmail = async(options) => {
         text:options.message
     }
 
-    new Promise((resolve, reject) => {
     transporter.sendMail(mailOptions, function(error,info){
         if(error){
-            reject(error);
+            console.log(error);
         }
         else{
-            resolve("Email sent: " + info.response);
+            console.log("Email sent: " + info.response);
         }
     });
-})
 }
 export default sendEmail;
 

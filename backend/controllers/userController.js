@@ -79,7 +79,7 @@ export const forgotPassword = catchAsyncErrors(async(req,res,next) => {
     await user.save({validateBeforeSave:false});
 
     const resetPasswordUrl = `https://calm-blue-yak.cyclic.app/password/reset/${resetToken}`;
-    const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email, then please ignore it.`;
+    const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email, then please just ignore it.`;
 
     try {
         await sendEmail({
